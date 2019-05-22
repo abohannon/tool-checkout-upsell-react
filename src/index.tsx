@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { UpsellContainer } from './containers/UpsellContainer'
+import UpsellContainer from './containers/Upsell'
 
 const rootEl = document.getElementById(`root`)
 
