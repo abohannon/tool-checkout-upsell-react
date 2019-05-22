@@ -5,8 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Upsell App</title>
+
+  <style>
+    .button-container {
+      margin: 16px;
+    }
+  </style>
 </head>
 <body>
+  <div class="button-container">
+    <button id="button-a" >Buy A</button>
+    <button id="button-b">Buy B</button>
+    <button id="button-c">Buy C</button>
+  </div>
   <div id="root"></div>
+
+  <script>
+    (function createConfig() {
+      window.upsell = null
+
+      var config = JSON.stringify({
+        inputTargets: [`#button-a`, `#button-b`, `#button-c`],
+        successUrl: `https://www.google.com`,
+        successParamName: `package`,
+        products: [
+          {
+            target: `#button-a`,
+            displayName: `XYO Reserve Pack - 480 Tier`,
+            productName: `XYO Reserve Pack - 480 Tier`,
+            quantity: 1,
+            options: null,
+          },
+          {
+            target: `#button-b`,
+            displayName: `XYO Reserve Pack - 995 Tier`,
+            productName: `XYO Reserve Pack - 995 Tier`,
+            quantity: 1,
+            options: null,
+          },
+          {
+            target: `#button-c`,
+            displayName: `XYO Reserve Pack - 2480 Tier`,
+            productName: `XYO Reserve Pack - 2480 Tier`,
+            quantity: 1,
+            options: null,
+          },
+        ],
+        addonProducts: [
+          {
+            displayName: `T-Shirt size`,
+            productName: null,
+            options: [
+              {
+                productName: `XYO T-Shirt Black S`,
+              },
+              {
+                productName: `XYO T-Shirt Black M`,
+              },
+              {
+                productName: `XYO T-Shirt Black L`,
+              },
+              {
+                productName: `XYO T-Shirt Black XL`,
+              },
+              {
+                productName: `XYO T-Shirt Black 2XL`,
+              }
+            ],
+          },
+        ],
+      })
+
+      document.querySelector('#root').dataset.config = config
+    })()
+  </script>
 </body>
 </html>
