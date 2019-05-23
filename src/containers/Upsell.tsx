@@ -1,36 +1,34 @@
 import * as React from 'react'
 import '../scss/style.scss'
 import { addEventListeners } from '../util/utils'
+
 export interface Props {
-  config: {
-    inputTargets: string[],
-  },
+    config: {
+        inputTargets: string[];
+    };
 }
 
 export interface State {
-  activeTarget: string,
+    activeTarget: string;
 }
 
 export class UpsellContainer extends React.Component<Props, State> {
-  componentDidMount() {
-    const { config } = this.props
-    addEventListeners(config.inputTargets)
-  }
+    componentDidMount() {
+        const { config } = this.props
+        addEventListeners(config.inputTargets)
+    }
 
-  handleExternalEvent = (activeTarget: string) => {
-    this.setState({
-      activeTarget,
-    }, () => console.log(this.state.activeTarget))
+    handleExternalEvent = (activeTarget: string): void => {
+        this.setState({
+            activeTarget,
+        })
+    }
 
-  }
-
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+    render() {
+        return (
+          <div />
+        )
+    }
 }
 
 export default UpsellContainer
