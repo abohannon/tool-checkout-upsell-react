@@ -6,7 +6,8 @@
       "module": "commonjs",
       "target": "es6",
       "jsx": "react",
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "esModuleInterop": true
   },
   "allowSyntheticDefaultImports": true,
   "include": [

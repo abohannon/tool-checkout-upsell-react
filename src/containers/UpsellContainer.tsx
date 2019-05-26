@@ -1,19 +1,19 @@
-import * as React from 'react'
+import React, { Component } from 'react'
 import '../scss/style.scss'
 import { addEventListeners } from '../util/utils'
 
-export interface Props {
+interface Props {
     config: {
         inputTargets: string[];
     };
 }
 
-export interface State {
+interface State {
     activeTarget: string;
 }
 
-export class UpsellContainer extends React.Component<Props, State> {
-    componentDidMount() {
+export class UpsellContainer extends Component<Props, State> {
+    componentDidMount(): void {
         const { config } = this.props
         addEventListeners(config.inputTargets)
     }
@@ -24,7 +24,7 @@ export class UpsellContainer extends React.Component<Props, State> {
         })
     }
 
-    render() {
+    render(): React.ReactNode {
         return (
           <div />
         )
